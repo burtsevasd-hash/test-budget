@@ -115,6 +115,9 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
             . Фактический результат может отклониться от плана на эту величину в любую сторону —
             на эту часть прибыли компания не может уверенно рассчитывать.
           </p>
+          <p className="mt-3 text-foreground font-medium leading-relaxed">
+            На эфире я покажу, как эту зону сократить — пошагово, на реальных формах и формулах, без воды.
+          </p>
         </Card>
 
         {/* WEAK BLOCKS */}
@@ -139,8 +142,6 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
 
         {/* CTA */}
         <Card className="p-6 sm:p-8 bg-gradient-hero text-primary-foreground shadow-elegant">
-          <p className="text-lg leading-relaxed mb-6 opacity-95">{lvl.cta_text}</p>
-
           <div className="rounded-xl bg-background/10 backdrop-blur p-5 sm:p-6 mb-6 border border-primary-foreground/15">
             <p className="font-semibold mb-4">
               На эфире — 10 шагов к бюджету, который реально работает:
