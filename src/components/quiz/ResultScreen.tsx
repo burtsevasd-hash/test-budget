@@ -140,6 +140,48 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
         {/* CTA */}
         <Card className="p-6 sm:p-8 bg-gradient-hero text-primary-foreground shadow-elegant">
           <p className="text-lg leading-relaxed mb-6 opacity-95">{lvl.cta_text}</p>
+
+          <div className="rounded-xl bg-background/10 backdrop-blur p-5 sm:p-6 mb-6 border border-primary-foreground/15">
+            <p className="font-semibold mb-4">
+              На эфире — 10 шагов к бюджету, который реально работает:
+            </p>
+            <ol className="space-y-3 text-sm sm:text-[15px] leading-relaxed list-decimal pl-5 opacity-95">
+              <li>
+                Как описать финансовую структуру (ЦФО) так, чтобы каждый руководитель отвечал
+                за свои показатели в рублях и единицах — с защитой бюджета и подписанным
+                протоколом.
+              </li>
+              <li>
+                Как определить методику бюджетирования под вашу компанию — Incremental,
+                Activity-Based, Driver-Based или Rolling Forecast (дерево решений на эфире).
+              </li>
+              <li>
+                Цифровая зрелость данных: что значит «копнуть глубже» и почему без этого
+                Driver-Based бюджет не запустить.
+              </li>
+              <li>
+                Как устроен бюджетный процесс — от целеполагания собственника до защиты
+                бюджета руководителями ЦФО (с шаблоном письма-старта бюджетной кампании).
+              </li>
+              <li>
+                Связка Excel + Power Query + ChatGPT — параметрическая модель: меняете один
+                драйвер, БДР, БДДС и прогнозный баланс пересчитываются автоматически.
+              </li>
+              <li>
+                Как презентовать бюджет собственнику, чтобы он ушёл с подписанным протоколом
+                по 5–7 решениям (а не «спасибо, утверждаю»).
+              </li>
+              <li>
+                8 рычагов повышения точности планирования — что внедряют CFO, у которых
+                отклонение факт/план ≤ ±5%.
+              </li>
+              <li>
+                Демо интерактивного бюджета: показываю модель, которая даёт точность
+                планирования выше 90%.
+              </li>
+            </ol>
+          </div>
+
           <Button
             size="lg"
             variant="secondary"
