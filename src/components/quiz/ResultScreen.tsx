@@ -196,13 +196,6 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
           </div>
         </Card>
 
-        {/* PDF */}
-        <div>
-          <Button variant="outline" className="gap-2" onClick={() => setPdfOpen(true)}>
-            <Mail className="h-4 w-4" /> Получить PDF-отчёт на e-mail
-          </Button>
-        </div>
-
         {/* Share / restart */}
         <div className="flex flex-wrap items-center gap-2 pt-4 border-t border-border">
           <span className="text-sm text-muted-foreground mr-2 inline-flex items-center gap-1">
