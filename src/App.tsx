@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
@@ -9,28 +8,9 @@ import { QuestionScreen } from "@/components/quiz/QuestionScreen";
 import { ProcessingScreen } from "@/components/quiz/ProcessingScreen";
 import { ResultScreen } from "@/components/quiz/ResultScreen";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Бюджет-радар — диагностика зрелости бюджета за 5 минут" },
-      {
-        name: "description",
-        content:
-          "Анонимный тест из 18 вопросов: узнайте свой уровень зрелости бюджета (0–4), цену неточности в % от чистой прибыли и персональные рекомендации.",
-      },
-      { property: "og:title", content: "Бюджет-радар — диагностика зрелости бюджета" },
-      {
-        property: "og:description",
-        content: "18 вопросов · 5–7 минут · анонимно · бесплатно",
-      },
-    ],
-  }),
-  component: Index,
-});
-
 type Phase = "landing" | "quiz" | "processing" | "result";
 
-function Index() {
+export default function App() {
   const { state, hydrated, answer, goNext, goPrev, finish, reset } = useQuizState();
   const [phase, setPhase] = useState<Phase>("landing");
   const [result, setResult] = useState<Result | null>(null);
@@ -115,7 +95,10 @@ function Index() {
 }
 
 function Landing({
-  onStart, onShowResult, hasPrevResult, inProgress,
+  onStart,
+  onShowResult,
+  hasPrevResult,
+  inProgress,
 }: {
   onStart: () => void;
   onShowResult: () => void;
@@ -140,15 +123,17 @@ function Landing({
             <Sparkles className="h-3.5 w-3.5" /> Диагностический тест
           </span>
           <h1 className="text-4xl sm:text-6xl font-extrabold leading-[1.05] mb-6">
-            Бюджет-радар:<br />
+            Бюджет-радар:
+            <br />
             <span className="bg-gradient-hero bg-clip-text text-transparent">
               узнайте уровень зрелости
             </span>
-            <br />вашего бюджета
+            <br />
+            вашего бюджета
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            18 вопросов в 5 блоках. На выходе — ваш уровень от 0 до 4,
-            радар по блокам и оценка «цены» неточности в % от годовой чистой прибыли.
+            18 вопросов в 5 блоках. На выходе — ваш уровень от 0 до 4, радар по блокам и оценка
+            «цены» неточности в % от годовой чистой прибыли.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
@@ -173,7 +158,11 @@ function Landing({
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">Что внутри</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {[
-            { icon: FileQuestion, t: "5 блоков диагностики", d: "ЦФО, Данные, Методика, Процесс, Точность" },
+            {
+              icon: FileQuestion,
+              t: "5 блоков диагностики",
+              d: "ЦФО, Данные, Методика, Процесс, Точность",
+            },
             { icon: Sparkles, t: "Радар-диаграмма", d: "Сильные и слабые зоны на одном экране" },
             { icon: ShieldCheck, t: "Анонимно", d: "Никаких регистраций для прохождения" },
             { icon: Clock, t: "5–7 минут", d: "Можно вернуться к ответу или продолжить позже" },
