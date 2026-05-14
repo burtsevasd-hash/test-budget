@@ -1,11 +1,23 @@
 import { useMemo, useState } from "react";
 import {
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip,
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+  Tooltip,
 } from "recharts";
 import { BLOCKS, LEVELS, RECOMMENDATIONS, type Result } from "@/data/quiz";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
@@ -40,7 +52,9 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
     const url = typeof window !== "undefined" ? window.location.origin : "";
     const text = "Прошёл тест «Бюджет-радар» — узнайте свой уровень зрелости бюджета:";
     if (channel === "tg") {
-      window.open(`https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`);
+      window.open(
+        `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`,
+      );
     } else if (channel === "wa") {
       window.open(`https://wa.me/?text=${encodeURIComponent(text + " " + url)}`);
     } else {
@@ -61,17 +75,13 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
             Ваш уровень зрелости бюджета
           </p>
           <div className="flex items-baseline justify-center gap-3 my-4">
-            <span className="text-7xl sm:text-8xl font-extrabold leading-none">
-              {result.level}
-            </span>
+            <span className="text-7xl sm:text-8xl font-extrabold leading-none">{result.level}</span>
             <span className="text-2xl sm:text-3xl opacity-70">/ 4</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: lvl.fg }}>
             {lvl.name}
           </h1>
-          <p className="text-base sm:text-lg max-w-2xl mx-auto opacity-90">
-            {lvl.description}
-          </p>
+          <p className="text-base sm:text-lg max-w-2xl mx-auto opacity-90">{lvl.description}</p>
           <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background/40 backdrop-blur text-sm font-medium">
             Балл: {result.total_score} / 42 · {result.total_percent}%
           </div>
@@ -86,7 +96,10 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
             <ResponsiveContainer>
               <RadarChart data={data} outerRadius="75%">
                 <PolarGrid stroke="oklch(0.85 0.01 250)" />
-                <PolarAngleAxis dataKey="block" tick={{ fontSize: 12, fill: "oklch(0.3 0.04 255)" }} />
+                <PolarAngleAxis
+                  dataKey="block"
+                  tick={{ fontSize: 12, fill: "oklch(0.3 0.04 255)" }}
+                />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={false} axisLine={false} />
                 <Radar
                   name="Ваш результат"
@@ -96,7 +109,10 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
                   fillOpacity={0.25}
                 />
                 <Tooltip
-                  formatter={(_v, _n, p: any) => [`${p.payload.score}/${p.payload.max} (${p.payload.value}%)`, p.payload.block]}
+                  formatter={(_v, _n, p: any) => [
+                    `${p.payload.score}/${p.payload.max} (${p.payload.value}%)`,
+                    p.payload.block,
+                  ]}
                   contentStyle={{ borderRadius: 12, border: "1px solid var(--border)" }}
                 />
               </RadarChart>
@@ -110,13 +126,17 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
           <p className="text-muted-foreground leading-relaxed">
             На вашем уровне зрелости в зоне непредсказуемости находится примерно{" "}
             <span className="font-bold text-foreground">
-              {result.money_loss_percent_of_np}% годовой чистой прибыли
+              {result.money_loss_percent_of_np.toLocaleString("ru-RU", {
+                maximumFractionDigits: 2,
+              })}
+              % годовой чистой прибыли
             </span>
-            . Фактический результат может отклониться от плана на эту величину в любую сторону —
-            на эту часть прибыли компания не может уверенно рассчитывать.
+            . Фактический результат может отклониться от плана на эту величину в любую сторону — на
+            эту часть прибыли компания не может уверенно рассчитывать.
           </p>
           <p className="mt-3 text-foreground font-medium leading-relaxed">
-            На эфире «Бюджет, как инструмент управления чистой прибылью» я покажу, как эту зону сократить — пошагово, на реальных формах и формулах, без воды.
+            На эфире «Бюджет, как инструмент управления чистой прибылью» я покажу, как эту зону
+            сократить — пошагово, на реальных формах и формулах, без воды.
           </p>
         </Card>
 
@@ -148,9 +168,8 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
             </p>
             <ol className="space-y-3 text-sm sm:text-[15px] leading-relaxed list-decimal pl-5 opacity-95">
               <li>
-                Как описать финансовую структуру (ЦФО) так, чтобы каждый руководитель отвечал
-                за свои показатели в рублях и единицах — с защитой бюджета и подписанным
-                протоколом.
+                Как описать финансовую структуру (ЦФО) так, чтобы каждый руководитель отвечал за
+                свои показатели в рублях и единицах — с защитой бюджета и подписанным протоколом.
               </li>
               <li>
                 Как определить методику бюджетирования под вашу компанию — Incremental,
@@ -161,24 +180,24 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
                 Driver-Based бюджет не запустить.
               </li>
               <li>
-                Как устроен бюджетный процесс — от целеполагания собственника до защиты
-                бюджета руководителями ЦФО (с шаблоном письма-старта бюджетной кампании).
+                Как устроен бюджетный процесс — от целеполагания собственника до защиты бюджета
+                руководителями ЦФО (с шаблоном письма-старта бюджетной кампании).
               </li>
               <li>
-                Связка Excel + Power Query + ChatGPT — параметрическая модель: меняете один
-                драйвер, БДР, БДДС и прогнозный баланс пересчитываются автоматически.
+                Связка Excel + Power Query + ChatGPT — параметрическая модель: меняете один драйвер,
+                БДР, БДДС и прогнозный баланс пересчитываются автоматически.
               </li>
               <li>
-                Как презентовать бюджет собственнику, чтобы он ушёл с подписанным протоколом
-                по 5–7 решениям (а не «спасибо, утверждаю»).
+                Как презентовать бюджет собственнику, чтобы он ушёл с подписанным протоколом по 5–7
+                решениям (а не «спасибо, утверждаю»).
               </li>
               <li>
-                8 рычагов повышения точности планирования — что внедряют CFO, у которых
-                отклонение факт/план ≤ ±5%.
+                8 рычагов повышения точности планирования — что внедряют CFO, у которых отклонение
+                факт/план ≤ ±5%.
               </li>
               <li>
-                Демо интерактивного бюджета: показываю модель, которая даёт точность
-                планирования выше 90%.
+                Демо интерактивного бюджета: показываю модель, которая даёт точность планирования
+                выше 90%.
               </li>
             </ol>
           </div>
@@ -193,9 +212,7 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
               Зарегистрироваться на эфир
             </a>
           </Button>
-          <div className="mt-4 text-sm opacity-90">
-            Эфир · 2 часа · бесплатно · разбор кейсов
-          </div>
+          <div className="mt-4 text-sm opacity-90">Эфир · 2 часа · бесплатно · разбор кейсов</div>
         </Card>
 
         {/* Share / restart */}
@@ -203,16 +220,28 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
           <span className="text-sm text-muted-foreground mr-2 inline-flex items-center gap-1">
             <Share2 className="h-4 w-4" /> Поделиться:
           </span>
-          <Button size="sm" variant="ghost" onClick={() => share("tg")}>Telegram</Button>
-          <Button size="sm" variant="ghost" onClick={() => share("wa")}>WhatsApp</Button>
-          <Button size="sm" variant="ghost" onClick={() => share("copy")}>Копировать</Button>
+          <Button size="sm" variant="ghost" onClick={() => share("tg")}>
+            Telegram
+          </Button>
+          <Button size="sm" variant="ghost" onClick={() => share("wa")}>
+            WhatsApp
+          </Button>
+          <Button size="sm" variant="ghost" onClick={() => share("copy")}>
+            Копировать
+          </Button>
           <Button size="sm" variant="ghost" className="ml-auto gap-1" onClick={onRestart}>
             <RotateCcw className="h-4 w-4" /> Пройти ещё раз
           </Button>
         </div>
       </div>
 
-      <Dialog open={pdfOpen} onOpenChange={(o) => { setPdfOpen(o); if (!o) setSent(false); }}>
+      <Dialog
+        open={pdfOpen}
+        onOpenChange={(o) => {
+          setPdfOpen(o);
+          if (!o) setSent(false);
+        }}
+      >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>{sent ? "Готово" : "Получить PDF-отчёт"}</DialogTitle>
