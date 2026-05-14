@@ -187,9 +187,11 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
             size="lg"
             variant="secondary"
             className="w-full sm:w-auto text-base font-semibold"
-            onClick={() => toast.info("Откройте страницу регистрации эфира")}
+            asChild
           >
-            Зарегистрироваться на эфир
+            <a href="https://probudget.fin-academy.pro" target="_blank" rel="noopener noreferrer">
+              Зарегистрироваться на эфир
+            </a>
           </Button>
           <div className="mt-4 text-sm opacity-90">
             Эфир · 2 часа · бесплатно · разбор кейсов
