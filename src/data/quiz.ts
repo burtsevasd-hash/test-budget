@@ -23,7 +23,9 @@ export const TOTAL_MAX = 42;
 export const QUESTIONS: Question[] = [
   // Блок 1 — ЦФО, max 8 (4 вопроса × до 2 баллов)
   {
-    id: "q1", block: 1, block_title: BLOCKS[1].title,
+    id: "q1",
+    block: 1,
+    block_title: BLOCKS[1].title,
     text: "В компании выделена финансовая структура (ЦФО) с зонами ответственности?",
     options: [
       { id: "q1_a1", text: "Нет, ответственность размыта", score: 0 },
@@ -32,7 +34,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q2", block: 1, block_title: BLOCKS[1].title,
+    id: "q2",
+    block: 1,
+    block_title: BLOCKS[1].title,
     text: "Руководители подразделений отвечают за бюджет своего ЦФО?",
     options: [
       { id: "q2_a1", text: "Нет, всё контролирует собственник/финдир", score: 0 },
@@ -41,7 +45,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q3", block: 1, block_title: BLOCKS[1].title,
+    id: "q3",
+    block: 1,
+    block_title: BLOCKS[1].title,
     text: "Есть ли матрица доходов/расходов с привязкой к ЦФО?",
     options: [
       { id: "q3_a1", text: "Нет, всё в общем котле", score: 0 },
@@ -50,7 +56,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q4", block: 1, block_title: BLOCKS[1].title,
+    id: "q4",
+    block: 1,
+    block_title: BLOCKS[1].title,
     text: "Пересматриваете ли вы оргструктуру при изменении бизнес-модели?",
     options: [
       { id: "q4_a1", text: "Нет, структура не менялась годами", score: 0 },
@@ -61,7 +69,9 @@ export const QUESTIONS: Question[] = [
 
   // Блок 2 — Данные, max 9 (3 вопроса × до 3)
   {
-    id: "q5", block: 2, block_title: BLOCKS[2].title,
+    id: "q5",
+    block: 2,
+    block_title: BLOCKS[2].title,
     text: "Источник управленческих данных для бюджета:",
     options: [
       { id: "q5_a1", text: "Только 1С/бухгалтерия задним числом", score: 0 },
@@ -71,7 +81,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q6", block: 2, block_title: BLOCKS[2].title,
+    id: "q6",
+    block: 2,
+    block_title: BLOCKS[2].title,
     text: "Скорость закрытия управленческого периода:",
     options: [
       { id: "q6_a1", text: "Более 30 дней или не закрываем", score: 0 },
@@ -81,7 +93,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q7", block: 2, block_title: BLOCKS[2].title,
+    id: "q7",
+    block: 2,
+    block_title: BLOCKS[2].title,
     text: "Качество данных (сверка, дубли, классификаторы):",
     options: [
       { id: "q7_a1", text: "Регулярные расхождения, доверия нет", score: 0 },
@@ -93,7 +107,9 @@ export const QUESTIONS: Question[] = [
 
   // Блок 3 — Методика, max 10 (4 вопроса × до 2-3)
   {
-    id: "q8", block: 3, block_title: BLOCKS[3].title,
+    id: "q8",
+    block: 3,
+    block_title: BLOCKS[3].title,
     text: "Бюджет строится на драйверах (натуральных показателях) или «от прошлого года»?",
     options: [
       { id: "q8_a1", text: "От прошлого года ± %", score: 0 },
@@ -102,7 +118,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q9", block: 3, block_title: BLOCKS[3].title,
+    id: "q9",
+    block: 3,
+    block_title: BLOCKS[3].title,
     text: "Есть ли сценарное планирование (база/оптимистичный/пессимистичный)?",
     options: [
       { id: "q9_a1", text: "Нет, один сценарий", score: 0 },
@@ -111,7 +129,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q10", block: 3, block_title: BLOCKS[3].title,
+    id: "q10",
+    block: 3,
+    block_title: BLOCKS[3].title,
     text: "Учитываются ли постоянные/переменные расходы отдельно?",
     options: [
       { id: "q10_a1", text: "Нет, всё одной кучей", score: 0 },
@@ -120,7 +140,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q11", block: 3, block_title: BLOCKS[3].title,
+    id: "q11",
+    block: 3,
+    block_title: BLOCKS[3].title,
     text: "Есть ли модель cash flow (платёжный календарь, прогноз ДДС)?",
     options: [
       { id: "q11_a1", text: "Нет", score: 0 },
@@ -131,7 +153,9 @@ export const QUESTIONS: Question[] = [
 
   // Блок 4 — Процесс, max 6 (3 × до 2)
   {
-    id: "q12", block: 4, block_title: BLOCKS[4].title,
+    id: "q12",
+    block: 4,
+    block_title: BLOCKS[4].title,
     text: "Регламент бюджетирования (сроки, ответственные, форматы):",
     options: [
       { id: "q12_a1", text: "Регламента нет", score: 0 },
@@ -140,7 +164,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q13", block: 4, block_title: BLOCKS[4].title,
+    id: "q13",
+    block: 4,
+    block_title: BLOCKS[4].title,
     text: "Бюджетный комитет / регулярные встречи по бюджету:",
     options: [
       { id: "q13_a1", text: "Не проводятся", score: 0 },
@@ -149,7 +175,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q14", block: 4, block_title: BLOCKS[4].title,
+    id: "q14",
+    block: 4,
+    block_title: BLOCKS[4].title,
     text: "Связь бюджета с мотивацией сотрудников:",
     options: [
       { id: "q14_a1", text: "Нет связи", score: 0 },
@@ -160,7 +188,9 @@ export const QUESTIONS: Question[] = [
 
   // Блок 5 — Точность, max 9 (4 × до 2-3)
   {
-    id: "q15", block: 5, block_title: BLOCKS[5].title,
+    id: "q15",
+    block: 5,
+    block_title: BLOCKS[5].title,
     text: "Сравниваете ли план/факт регулярно?",
     options: [
       { id: "q15_a1", text: "Нет", score: 0 },
@@ -169,7 +199,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q16", block: 5, block_title: BLOCKS[5].title,
+    id: "q16",
+    block: 5,
+    block_title: BLOCKS[5].title,
     text: "Какова типичная ошибка прогноза по выручке за год?",
     options: [
       { id: "q16_a1", text: "Не считали / более 25%", score: 0 },
@@ -179,7 +211,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q17", block: 5, block_title: BLOCKS[5].title,
+    id: "q17",
+    block: 5,
+    block_title: BLOCKS[5].title,
     text: "Анализируете причины отклонений (variance analysis)?",
     options: [
       { id: "q17_a1", text: "Нет", score: 0 },
@@ -188,7 +222,9 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: "q18", block: 5, block_title: BLOCKS[5].title,
+    id: "q18",
+    block: 5,
+    block_title: BLOCKS[5].title,
     text: "Используете rolling forecast (скользящий прогноз)?",
     options: [
       { id: "q18_a1", text: "Нет, только годовой бюджет", score: 0 },
@@ -211,8 +247,11 @@ export type LevelInfo = {
 
 export const LEVELS: LevelInfo[] = [
   {
-    level: 0, name: "Хаос", range: "0–20%",
-    bg: "#FFCDD2", fg: "#7A1F1F",
+    level: 0,
+    name: "Хаос",
+    range: "0–20%",
+    bg: "#FFCDD2",
+    fg: "#7A1F1F",
     description:
       "Бюджета как инструмента нет. Решения принимаются на ощущениях, итог месяца — каждый раз сюрприз.",
     cta_text:
@@ -220,8 +259,11 @@ export const LEVELS: LevelInfo[] = [
     gap: 0.25,
   },
   {
-    level: 1, name: "Формальный бюджет", range: "21–40%",
-    bg: "#FFE0B2", fg: "#7A4A12",
+    level: 1,
+    name: "Формальный бюджет",
+    range: "21–40%",
+    bg: "#FFE0B2",
+    fg: "#7A4A12",
     description:
       "Бюджет есть «на бумаге», но живёт отдельно от управленческих решений. План/факт смотрят редко, выводов почти нет.",
     cta_text:
@@ -229,8 +271,11 @@ export const LEVELS: LevelInfo[] = [
     gap: 0.175,
   },
   {
-    level: 2, name: "Управленческий учёт", range: "41–60%",
-    bg: "#FFF9C4", fg: "#6E5B12",
+    level: 2,
+    name: "Управленческий учёт",
+    range: "41–60%",
+    bg: "#FFF9C4",
+    fg: "#6E5B12",
     description:
       "Учёт по ЦФО налажен, план/факт смотрите. Но методика плоская: «от прошлого года», без сценариев и драйверов.",
     cta_text:
@@ -238,8 +283,11 @@ export const LEVELS: LevelInfo[] = [
     gap: 0.125,
   },
   {
-    level: 3, name: "Драйверный бюджет", range: "61–80%",
-    bg: "#C8E6C9", fg: "#1F5F2A",
+    level: 3,
+    name: "Драйверный бюджет",
+    range: "61–80%",
+    bg: "#C8E6C9",
+    fg: "#1F5F2A",
     description:
       "Бюджет — на драйверах, со сценариями. Регулярный разбор и связь с мотивацией. Хороший уровень с потенциалом роста.",
     cta_text:
@@ -247,8 +295,11 @@ export const LEVELS: LevelInfo[] = [
     gap: 0.075,
   },
   {
-    level: 4, name: "Living budget", range: "81–100%",
-    bg: "#B2DFDB", fg: "#11514C",
+    level: 4,
+    name: "Living budget",
+    range: "81–100%",
+    bg: "#B2DFDB",
+    fg: "#11514C",
     description:
       "Driver-Based Budgeting + Rolling Forecast в живой модели. Бюджет = инструмент управления, а не отчётность.",
     cta_text:
@@ -257,28 +308,73 @@ export const LEVELS: LevelInfo[] = [
   },
 ];
 
-export const RECOMMENDATIONS: Record<number, { title: string; text: string }> = {
+// Пороги слабости блока (в процентах от max балла блока):
+// - low: блок <40% — реально провальный, нужна базовая работа
+// - mid: 40-70% — среднее, есть что усиливать
+// - >=70% — блок не считается слабым, в weak_blocks не попадает
+export const WEAK_THRESHOLD = 70;
+
+export type Recommendation = {
+  title: string;
+  text_low: string;
+  text_mid: string;
+  strong_text: string;
+};
+
+export const RECOMMENDATIONS: Record<number, Recommendation> = {
   1: {
     title: "Блок «Финансовая структура (ЦФО)»",
-    text: "У вас нет формальной финансовой структуры или руководители не отвечают за свои показатели. Начните с матрицы ЦФО и закрепите ответственность за статьи доходов/расходов.",
+    text_low:
+      "У вас нет формальной финансовой структуры или руководители не отвечают за свои показатели. Начните с матрицы ЦФО и закрепите ответственность за статьи доходов/расходов.",
+    text_mid:
+      "Структура ЦФО есть, но работает не на полную: где-то размыта ответственность, где-то нет связи с KPI. Доформализуйте матрицу и привяжите бюджет каждого ЦФО к мотивации руководителя.",
+    strong_text:
+      "Финансовая структура работает. Можно усилить регулярным аудитом оргструктуры при изменении бизнес-модели.",
   },
   2: {
     title: "Блок «Данные»",
-    text: "Данные собираются медленно или не вызывают доверия. Сократите срок закрытия периода, наладьте сверку и единый классификатор статей.",
+    text_low:
+      "Данные собираются медленно или не вызывают доверия. Сократите срок закрытия периода, наладьте сверку и единый классификатор статей.",
+    text_mid:
+      "Данные в целом есть, но или собираются вручную, или периодически расходятся. Автоматизируйте сбор из источников и наладьте контроль качества — сверка, дубли, единый классификатор.",
+    strong_text:
+      "Данные собираются быстро и аккуратно. Следующий шаг — единое хранилище (DWH/BI) с автоматическим контролем качества.",
   },
   3: {
     title: "Блок «Методика»",
-    text: "Бюджет строится «от прошлого года». Перейдите на драйверы (цена × объём, конверсии, ставки) и заведите 2–3 сценария.",
+    text_low:
+      "Бюджет строится «от прошлого года». Перейдите на драйверы (цена × объём, конверсии, ставки) и заведите 2–3 сценария.",
+    text_mid:
+      "Подход к бюджету смешанный: часть статей — от прошлого года, часть — на драйверах. Переведите ключевые статьи (выручка, переменные расходы) полностью на драйверы и добавьте 2–3 сценария.",
+    strong_text:
+      "Методика бюджетирования сильная: драйверы, сценарии, маржинальная модель, прогноз ДДС. Дальше — углублять модели cash flow и driver-based бюджет.",
   },
   4: {
     title: "Блок «Процесс»",
-    text: "Нет регламента и регулярного бюджетного комитета. Опишите цикл планирования и привяжите бюджет к мотивации ЦФО.",
+    text_low:
+      "Нет регламента и регулярного бюджетного комитета. Опишите цикл планирования и привяжите бюджет к мотивации ЦФО.",
+    text_mid:
+      "Регламент бюджетирования есть, но соблюдается частично: либо встречи нерегулярные, либо мотивация привязана только к топ-менеджменту. Зафиксируйте календарь бюджетного комитета и распространите KPI на все ЦФО.",
+    strong_text:
+      "Процесс бюджетирования отлажен: есть регламент, бюджетный комитет, связь с мотивацией ЦФО. Можно усиливать через сквозную систему KPI и бонусов.",
   },
   5: {
     title: "Блок «Точность»",
-    text: "Слабый план/факт-анализ. Разбирайте отклонения ежемесячно и внедрите rolling forecast на 12 месяцев вперёд.",
+    text_low:
+      "Слабый план/факт-анализ. Разбирайте отклонения ежемесячно и внедрите rolling forecast на 12 месяцев вперёд.",
+    text_mid:
+      "План/факт смотрите, но не регулярно или без глубокого разбора причин. Введите ежемесячный variance-анализ по всем статьям и rolling forecast хотя бы на квартал вперёд.",
+    strong_text:
+      "Точность планирования высокая: вы регулярно разбираете отклонения и пользуетесь rolling forecast. Следующий шаг — добить ошибку прогноза по выручке ниже 5%.",
   },
 };
+
+export function pickRecommendationText(blockId: number, percent: number): string {
+  const r = RECOMMENDATIONS[blockId];
+  if (percent < 40) return r.text_low;
+  if (percent < WEAK_THRESHOLD) return r.text_mid;
+  return r.strong_text;
+}
 
 export function pickLevel(totalPercent: number): 0 | 1 | 2 | 3 | 4 {
   if (totalPercent <= 20) return 0;
@@ -294,7 +390,8 @@ export type Result = {
   level: 0 | 1 | 2 | 3 | 4;
   level_name: string;
   block_scores: Record<number, { score: number; max: number; percent: number }>;
-  weak_blocks: number[];
+  weak_blocks: number[]; // блоки <70%, до 3 шт, отсортированы по возрастанию процента
+  strong_blocks: number[]; // блоки ≥70%, топ-3 по убыванию процента (для случая когда слабых нет)
   money_loss_percent_of_np: number;
 };
 
@@ -317,11 +414,23 @@ export function computeResult(answers: Record<string, string>): Result {
   }
   const totalPercent = (total / TOTAL_MAX) * 100;
   const level = pickLevel(totalPercent);
-  const weak = [1, 2, 3, 4, 5]
-    .map((b) => ({ b, p: blockScores[b].percent }))
+
+  const ranked = [1, 2, 3, 4, 5].map((b) => ({ b, p: blockScores[b].percent }));
+
+  // Слабые: только блоки <70%, до 3 шт, по возрастанию процента
+  const weak = ranked
+    .filter((x) => x.p < WEAK_THRESHOLD)
     .sort((a, b) => a.p - b.p || a.b - b.b)
     .slice(0, 3)
     .map((x) => x.b);
+
+  // Сильные: блоки ≥70%, топ-3 по убыванию (показываются если слабых нет)
+  const strong = ranked
+    .filter((x) => x.p >= WEAK_THRESHOLD)
+    .sort((a, b) => b.p - a.p || a.b - b.b)
+    .slice(0, 3)
+    .map((x) => x.b);
+
   return {
     total_score: total,
     total_percent: Math.round(totalPercent * 10) / 10,
@@ -329,6 +438,7 @@ export function computeResult(answers: Record<string, string>): Result {
     level_name: LEVELS[level].name,
     block_scores: blockScores,
     weak_blocks: weak,
+    strong_blocks: strong,
     money_loss_percent_of_np: LEVELS[level].gap * 100,
   };
 }

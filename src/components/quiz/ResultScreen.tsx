@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import { BLOCKS, LEVELS, RECOMMENDATIONS, type Result } from "@/data/quiz";
+import { BLOCKS, LEVELS, RECOMMENDATIONS, pickRecommendationText, type Result } from "@/data/quiz";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -140,25 +140,62 @@ export function ResultScreen({ result, onRestart }: { result: Result; onRestart:
           </p>
         </Card>
 
-        {/* WEAK BLOCKS */}
-        <div>
-          <h2 className="text-xl font-bold mb-4">Топ-3 слабых блока</h2>
-          <div className="grid gap-3">
-            {result.weak_blocks.map((b) => (
-              <Card key={b} className="p-5 shadow-soft">
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <h3 className="font-semibold">{RECOMMENDATIONS[b].title}</h3>
-                  <span className="text-sm font-mono px-2 py-0.5 rounded bg-secondary">
-                    {Math.round(result.block_scores[b].percent)}%
-                  </span>
-                </div>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {RECOMMENDATIONS[b].text}
-                </p>
-              </Card>
-            ))}
+        {/* WEAK or STRONG BLOCKS */}
+        {result.weak_blocks.length > 0 ? (
+          <div>
+            <h2 className="text-xl font-bold mb-4">
+              {result.weak_blocks.length === 1
+                ? "Слабое место"
+                : result.weak_blocks.length === 2
+                  ? "2 слабых места"
+                  : "Топ-3 слабых места"}
+            </h2>
+            <div className="grid gap-3">
+              {result.weak_blocks.map((b) => {
+                const percent = Math.round(result.block_scores[b].percent);
+                return (
+                  <Card key={b} className="p-5 shadow-soft">
+                    <div className="mb-2 flex items-start justify-between gap-4">
+                      <h3 className="font-semibold">{RECOMMENDATIONS[b].title}</h3>
+                      <span className="rounded bg-secondary px-2 py-0.5 font-mono text-sm">
+                        {percent}%
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {pickRecommendationText(b, result.block_scores[b].percent)}
+                    </p>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div>
+            <h2 className="mb-4 text-xl font-bold">Сильные стороны</h2>
+            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+              Слабых блоков (ниже 70%) у вас нет — система бюджетирования работает. Вот что у вас
+              получается лучше всего, и куда расти дальше:
+            </p>
+            <div className="grid gap-3">
+              {result.strong_blocks.map((b) => {
+                const percent = Math.round(result.block_scores[b].percent);
+                return (
+                  <Card key={b} className="border-l-4 border-l-emerald-500 p-5 shadow-soft">
+                    <div className="mb-2 flex items-start justify-between gap-4">
+                      <h3 className="font-semibold">{RECOMMENDATIONS[b].title}</h3>
+                      <span className="rounded bg-emerald-50 px-2 py-0.5 font-mono text-sm text-emerald-700">
+                        {percent}%
+                      </span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {pickRecommendationText(b, result.block_scores[b].percent)}
+                    </p>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* CTA */}
         <Card className="p-6 sm:p-8 bg-gradient-hero text-primary-foreground shadow-elegant">
